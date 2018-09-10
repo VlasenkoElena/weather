@@ -1,0 +1,23 @@
+<div class="modal-header">
+  <h4 class="modal-title">Add new Weather</h4>
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="alert alert-{{message.type}}" *ngIf="message.text">{{message.text}}</div>
+<div class="modal-body d-flex justify-content-around">
+    <div class="demo"> 
+      <ng4geo-autocomplete [userSettings]="userSettings" (componentCallback)="autoCompleteCallback1($event)"></ng4geo-autocomplete>
+    </div>
+    <button class="btn btn-outline-primary" (click)="findPlaces()">Search</button>
+</div>
+<div class="modal-card text-center" *ngIf="!isDisabled">
+  <h2>{{weather?.name}}, {{weather?.sys.country}} </h2> 
+  <span>{{weather?.main.temp | number: '0.0-0'}} &#176;С</span>
+  <img src="{{weather?.iconUrl}}" alt="icon">
+  <p>Humidity: {{weather?.main.humidity}}%</p>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-primary" [(disabled)]="isDisabled" (click)="addToMain()">ADD</button>
+  <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Close</button>
+</div>

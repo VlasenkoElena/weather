@@ -1,0 +1,13 @@
+.card {
+    width: 60%;
+    margin: auto;
+    color: rgb(20, 173, 219);
+}
+.modal-card {
+    width: 50%;
+    margin: auto;
+}
+.btn-form {
+    height: 40px;
+    vertical-align: top; 
+}

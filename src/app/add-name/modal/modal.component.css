@@ -1,0 +1,16 @@
+.modal-title {
+    color: rgb(20, 173, 219);
+    font-size: 24px;
+    margin: auto;
+}
+.modal-card {
+    color: rgb(20, 173, 219);
+}
+.modal-footer {
+    color: white;
+}
+
+.demo #search_places {
+    width: 200px;
+    border-radius: 50%;
+  }

@@ -1,0 +1,25 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+body {
+    font-family: 'Lato', sans-serif;
+    background: url(assets/img/1.png); 
+    background-size: cover;
+    color: white;
+}
+h1 {
+    font-size: 40px;
+    font-weight: bold;
+}
+.w-name {
+    font: 600 28px/1 'Lato', sans-serif;
+}
+.w-temp {
+    font-size: 26px;
+}
+.w-img{
+    font-size: 30px;
+}
+.w-text {
+    font-style: italic;
+}
+ /*background: linear-gradient(88deg, rgba(224,122,255,1) 0%, rgba(123,172,232,1) 48%, rgba(14,227,209,1) 100%); */

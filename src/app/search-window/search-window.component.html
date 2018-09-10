@@ -1,0 +1,53 @@
+    <div>
+      <div class="card mt-5">
+          <header class="auth-header">
+              <h1 class="search-title text-center">Add Your City</h1>
+          </header>
+          <div class="search-content mt-3">
+            <div class="alert alert-{{message.type}}" *ngIf="message.text">{{message.text}}</div>
+              <form (ngSubmit)="findPlaces(form)" #form="ngForm">
+                  <div class="form-group d-flex justify-content-around">
+                    <label for="city">
+                      <input 
+                        type="text"
+                        class="form-control"
+                        id="city"
+                        placeholder="Your city name"
+                        ngModel
+                        name="placeName"
+                        required>
+                    </label>
+                    <label for="country">
+                      <input 
+                      type="text"
+                      class="form-control"
+                      id="country"
+                      placeholder="Your country name"
+                      ngModel
+                      name="countryCode">
+                    </label>
+                   <button 
+                     type="submit" 
+                     class="btn btn-primary btn-form">
+                     SEARCH</button>
+                </div>
+                <div class="modal-card text-center" *ngIf="isDisabled">
+                    <h2 class="w-name">{{weather?.name}}, {{weather?.sys.country}} </h2> 
+                    <span class="w-temp">{{weather?.main.temp | number: '0.0-0'}} &#176;С</span>
+                    <img class="w-img" src="{{weather?.iconUrl}}" alt="icon">
+                    <p class="w-text">Humidity: {{weather?.main.humidity}}%</p>
+                </div> 
+                <div class="form-group d-flex justify-content-around">
+                    <button 
+                    type="submit" 
+                    class="btn btn-primary"
+                    [disabled]="!form.valid"
+                    (click)="addWeather()"
+                    routerLink="/">ADD</button>
+                    <button class="btn btn-outline-dark" (click)="goHome()">Close</button>
+                </div>
+              </form>
+          </div>
+      </div>
+    </div>  
+

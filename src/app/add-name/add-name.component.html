@@ -1,0 +1,35 @@
+<div class="d-flex justify-content-around mt-3">
+  <button class="btn btn-light"  (onWeatherAdd)="weatherWasAdded($event)" (click)="open()">OPEN POPUP</button>
+  <button class="btn btn-outline-dark" (click)="clear()">CLEAR</button>
+  <button class="btn btn-light" routerLink="/search">OPEN FORM</button>
+</div>
+<div class="card-block mt-5">
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>City Name</th>
+            <th>Country</th>
+            <th>Temperature, &#176;С</th>
+            <th>Humidity, %</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let w of weathers; let idx = index" class="">
+            <th scope="row">{{ idx + 1}}</th>
+            <td>{{w.name}}</td>
+            <td>{{w.sys.country}}</td>
+            <td>{{w.main.temp | number: '0.0-0'}} <img class="w-img" src="{{w.iconUrl}}" alt="icon"></td>
+            <td>{{w.main.humidity}}</td>
+            <td> <button type="button" class="close" data-title="Delete" aria-label="Close" (click)="delWeather(idx)">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+  </div>
+
+
+
