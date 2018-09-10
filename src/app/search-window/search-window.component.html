@@ -6,7 +6,7 @@
           <div class="search-content mt-3">
             <div class="alert alert-{{message.type}}" *ngIf="message.text">{{message.text}}</div>
               <form (ngSubmit)="findPlaces(form)" #form="ngForm">
-                  <div class="form-group d-flex justify-content-around">
+                  <div class="form-group d-flex justify-content-center">
                     <label for="city">
                       <input 
                         type="text"
@@ -17,7 +17,7 @@
                         name="placeName"
                         required>
                     </label>
-                    <label for="country">
+                    <!--<label for="country">
                       <input 
                       type="text"
                       class="form-control"
@@ -25,10 +25,10 @@
                       placeholder="Your country name"
                       ngModel
                       name="countryCode">
-                    </label>
+                    </label>-->
                    <button 
                      type="submit" 
-                     class="btn btn-primary btn-form">
+                     class="btn btn-primary btn-form ml-5">
                      SEARCH</button>
                 </div>
                 <div class="modal-card text-center" *ngIf="isDisabled">
