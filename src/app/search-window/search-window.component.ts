@@ -69,6 +69,7 @@ export class SearchWindowComponent implements OnInit {
   }
 
   goHome() {
+    this.weatherService.clear();
     this.router.navigate(['']);
   }
 }

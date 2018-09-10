@@ -15,4 +15,8 @@ export class WeatherService {
     addWeather(weather: Weather) {
         this.weather = weather;
     }
+    
+    clear() {
+        this.weather = null;
+    }
 }
